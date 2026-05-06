@@ -16,9 +16,9 @@ export function FooterSection() {
               <Image
                 src="/images/vv-logo.png"
                 alt="VisionVerse"
-                width={200}
-                height={50}
-                className="h-12 w-auto"
+                width={400}
+                height={100}
+                className="h-24 w-auto"
               />
             </Link>
             <p className="mt-4 max-w-sm text-sm text-muted-foreground leading-relaxed">
