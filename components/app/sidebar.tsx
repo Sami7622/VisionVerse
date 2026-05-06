@@ -20,6 +20,7 @@ import {
   History, 
   Settings,
   LogOut,
+  Sparkles,
 } from 'lucide-react'
 import { useAuth } from '@/src/lib/auth-context'
 import { useRouter } from 'next/navigation'
@@ -31,7 +32,6 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu'
 import { Avatar, AvatarFallback } from '@/components/ui/avatar'
-import { Button } from '@/components/ui/button'
 import { ChevronUp } from 'lucide-react'
 
 const navigation = [
@@ -77,26 +77,34 @@ export function AppSidebar() {
   return (
     <Sidebar>
       <SidebarHeader>
-        <div className="flex items-center gap-2 px-2 py-4">
-          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary">
-            <span className="text-sm font-bold text-primary-foreground">V</span>
+        <div className="flex items-center gap-2.5 px-2 py-4">
+          <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-primary transition-transform hover:scale-105">
+            <Sparkles className="h-5 w-5 text-primary-foreground" />
           </div>
-          <span className="text-lg font-semibold">VisionVerse</span>
+          <span className="text-lg font-bold tracking-tight">
+            Vision<span className="text-primary">Verse</span>
+          </span>
         </div>
       </SidebarHeader>
 
       <SidebarContent>
         <SidebarGroup>
-          <SidebarGroupLabel>Navigation</SidebarGroupLabel>
+          <SidebarGroupLabel className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+            Navigation
+          </SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
               {navigation.map((item) => {
                 const isActive = pathname === item.href || pathname.startsWith(item.href + '/')
                 return (
                   <SidebarMenuItem key={item.href}>
-                    <SidebarMenuButton asChild isActive={isActive}>
+                    <SidebarMenuButton 
+                      asChild 
+                      isActive={isActive}
+                      className={`transition-all duration-200 ${isActive ? 'bg-primary/10 text-primary font-medium' : 'hover:bg-primary/5'}`}
+                    >
                       <Link href={item.href}>
-                        <item.icon className="h-4 w-4" />
+                        <item.icon className={`h-4 w-4 ${isActive ? 'text-primary' : ''}`} />
                         <span>{item.label}</span>
                       </Link>
                     </SidebarMenuButton>
@@ -115,10 +123,10 @@ export function AppSidebar() {
               <DropdownMenuTrigger asChild>
                 <SidebarMenuButton
                   size="lg"
-                  className="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground"
+                  className="data-[state=open]:bg-primary/10 data-[state=open]:text-primary transition-all duration-200 hover:bg-primary/5"
                 >
                   <Avatar className="h-8 w-8">
-                    <AvatarFallback className="bg-primary/10 text-primary">
+                    <AvatarFallback className="bg-primary text-primary-foreground font-semibold">
                       {initials}
                     </AvatarFallback>
                   </Avatar>
@@ -132,19 +140,19 @@ export function AppSidebar() {
                 </SidebarMenuButton>
               </DropdownMenuTrigger>
               <DropdownMenuContent
-                className="w-[--radix-dropdown-menu-trigger-width] min-w-56 rounded-lg"
+                className="w-[--radix-dropdown-menu-trigger-width] min-w-56 rounded-xl border-2"
                 side="top"
                 align="start"
                 sideOffset={4}
               >
-                <DropdownMenuItem asChild>
-                  <Link href="/app/settings">
+                <DropdownMenuItem asChild className="cursor-pointer">
+                  <Link href="/app/settings" className="flex items-center">
                     <Settings className="mr-2 h-4 w-4" />
                     Settings
                   </Link>
                 </DropdownMenuItem>
                 <DropdownMenuSeparator />
-                <DropdownMenuItem onClick={handleLogout} className="text-destructive">
+                <DropdownMenuItem onClick={handleLogout} className="text-destructive cursor-pointer focus:text-destructive">
                   <LogOut className="mr-2 h-4 w-4" />
                   Log out
                 </DropdownMenuItem>
