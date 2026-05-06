@@ -52,25 +52,27 @@ export function AppTopbar() {
   }
 
   return (
-    <header className="sticky top-0 z-40 flex h-14 shrink-0 items-center gap-4 border-b border-border bg-background/95 px-4 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <SidebarTrigger className="-ml-1" />
+    <header className="sticky top-0 z-40 flex h-14 shrink-0 items-center gap-4 border-b border-border bg-background/95 px-4 backdrop-blur-xl supports-[backdrop-filter]:bg-background/80">
+      <SidebarTrigger className="-ml-1 hover:bg-primary/10 hover:text-primary transition-colors" />
       <Separator orientation="vertical" className="h-4" />
       
       {/* Breadcrumb */}
       <Breadcrumb className="hidden sm:flex">
         <BreadcrumbList>
           <BreadcrumbItem>
-            <BreadcrumbLink href="/app/dashboard">App</BreadcrumbLink>
+            <BreadcrumbLink href="/app/dashboard" className="text-muted-foreground hover:text-primary transition-colors">
+              App
+            </BreadcrumbLink>
           </BreadcrumbItem>
           <BreadcrumbSeparator />
           <BreadcrumbItem>
-            <BreadcrumbPage>{pageTitle}</BreadcrumbPage>
+            <BreadcrumbPage className="font-medium">{pageTitle}</BreadcrumbPage>
           </BreadcrumbItem>
         </BreadcrumbList>
       </Breadcrumb>
 
       {/* Mobile title */}
-      <span className="font-medium sm:hidden">{pageTitle}</span>
+      <span className="font-semibold sm:hidden">{pageTitle}</span>
 
       {/* Right side */}
       <div className="ml-auto flex items-center gap-2">
@@ -80,18 +82,18 @@ export function AppTopbar() {
         <div className="md:hidden">
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <Button variant="ghost" size="icon" className="h-9 w-9">
+              <Button variant="ghost" size="icon" className="h-9 w-9 hover:bg-primary/10">
                 <Avatar className="h-7 w-7">
-                  <AvatarFallback className="bg-primary/10 text-xs text-primary">
+                  <AvatarFallback className="bg-primary text-primary-foreground text-xs font-semibold">
                     {initials}
                   </AvatarFallback>
                 </Avatar>
               </Button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent align="end" className="w-56">
+            <DropdownMenuContent align="end" className="w-56 rounded-xl border-2">
               <div className="flex items-center gap-2 p-2">
                 <Avatar className="h-8 w-8">
-                  <AvatarFallback className="bg-primary/10 text-primary">
+                  <AvatarFallback className="bg-primary text-primary-foreground font-semibold">
                     {initials}
                   </AvatarFallback>
                 </Avatar>
@@ -101,20 +103,20 @@ export function AppTopbar() {
                 </div>
               </div>
               <DropdownMenuSeparator />
-              <DropdownMenuItem asChild>
+              <DropdownMenuItem asChild className="cursor-pointer">
                 <Link href="/app/settings">
                   <User className="mr-2 h-4 w-4" />
                   Profile
                 </Link>
               </DropdownMenuItem>
-              <DropdownMenuItem asChild>
+              <DropdownMenuItem asChild className="cursor-pointer">
                 <Link href="/app/settings">
                   <Settings className="mr-2 h-4 w-4" />
                   Settings
                 </Link>
               </DropdownMenuItem>
               <DropdownMenuSeparator />
-              <DropdownMenuItem onClick={handleLogout} className="text-destructive">
+              <DropdownMenuItem onClick={handleLogout} className="text-destructive cursor-pointer focus:text-destructive">
                 <LogOut className="mr-2 h-4 w-4" />
                 Log out
               </DropdownMenuItem>
