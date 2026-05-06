@@ -31,9 +31,9 @@ export function LandingHeader() {
           <Image
             src="/images/vv-logo.png"
             alt="VisionVerse"
-            width={160}
-            height={40}
-            className="h-9 w-auto"
+            width={200}
+            height={50}
+            className="h-12 w-auto"
             priority
           />
         </Link>

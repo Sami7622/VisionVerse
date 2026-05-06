@@ -77,15 +77,15 @@ export function AppSidebar() {
   return (
     <Sidebar>
       <SidebarHeader>
-        <div className="flex items-center gap-2.5 px-2 py-4">
+        <div className="flex items-center gap-3 px-2 py-4">
           <Image
             src="/images/vv-icon.png"
             alt="VisionVerse"
-            width={36}
-            height={36}
-            className="h-9 w-9 rounded-xl"
+            width={44}
+            height={44}
+            className="h-11 w-11 rounded-xl"
           />
-          <span className="text-lg font-bold tracking-tight">
+          <span className="text-xl font-bold tracking-tight">
             Vision<span className="text-primary">Verse</span>
           </span>
         </div>
