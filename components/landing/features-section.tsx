@@ -33,7 +33,7 @@ const features = [
   },
   {
     title: 'Fast Processing',
-    description: 'Get results in seconds with optimized inference and GPU acceleration.',
+    description: 'Get results in seconds with optimized inference and real-time processing.',
     icon: Clock,
     available: true,
     gradient: 'from-chart-5/20 to-chart-5/5',

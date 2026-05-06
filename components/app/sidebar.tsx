@@ -20,8 +20,8 @@ import {
   History, 
   Settings,
   LogOut,
-  Sparkles,
 } from 'lucide-react'
+import Image from 'next/image'
 import { useAuth } from '@/src/lib/auth-context'
 import { useRouter } from 'next/navigation'
 import {
@@ -78,9 +78,13 @@ export function AppSidebar() {
     <Sidebar>
       <SidebarHeader>
         <div className="flex items-center gap-2.5 px-2 py-4">
-          <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-primary transition-transform hover:scale-105">
-            <Sparkles className="h-5 w-5 text-primary-foreground" />
-          </div>
+          <Image
+            src="/images/vv-icon.png"
+            alt="VisionVerse"
+            width={36}
+            height={36}
+            className="h-9 w-9 rounded-xl"
+          />
           <span className="text-lg font-bold tracking-tight">
             Vision<span className="text-primary">Verse</span>
           </span>

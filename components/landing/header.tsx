@@ -1,9 +1,10 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { Button } from '@/components/ui/button'
 import { ThemeToggle } from '@/components/theme-toggle'
-import { Menu, X, Sparkles } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
 import { useState, useEffect } from 'react'
 
 export function LandingHeader() {
@@ -26,13 +27,15 @@ export function LandingHeader() {
     }`}>
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2.5 group">
-          <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-primary transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3">
-            <Sparkles className="h-5 w-5 text-primary-foreground" />
-          </div>
-          <span className="text-xl font-bold tracking-tight">
-            Vision<span className="text-primary">Verse</span>
-          </span>
+        <Link href="/" className="flex items-center group transition-transform duration-300 hover:scale-105">
+          <Image
+            src="/images/vv-logo.png"
+            alt="VisionVerse"
+            width={160}
+            height={40}
+            className="h-9 w-auto"
+            priority
+          />
         </Link>
 
         {/* Desktop Navigation */}

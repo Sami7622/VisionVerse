@@ -18,7 +18,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: 'VisionVerse - Your All-in-One Computer Vision Workspace',
+    default: 'VisionVerse - Your All-in-One Computer Vision Playground',
     template: '%s | VisionVerse',
   },
   description: 'Upload images, run computer vision models, and explore CV tasks in the browser. Object detection, segmentation, classification and more.',

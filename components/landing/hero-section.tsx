@@ -26,26 +26,20 @@ export function HeroSection() {
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-4xl text-center">
-          {/* Badge */}
-          <div className={`inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-4 py-1.5 text-sm font-medium text-primary mb-8 ${mounted ? 'animate-slide-up' : 'opacity-0'}`}>
-            <Sparkles className="h-4 w-4" />
-            <span>Now with GPU acceleration</span>
-          </div>
-
           {/* Headline */}
-          <h1 className={`text-balance text-4xl font-bold tracking-tight sm:text-6xl lg:text-7xl ${mounted ? 'animate-slide-up-delay-1' : 'opacity-0'}`}>
+          <h1 className={`text-balance text-4xl font-bold tracking-tight sm:text-6xl lg:text-7xl ${mounted ? 'animate-slide-up' : 'opacity-0'}`}>
             Your all-in-one{' '}
             <span className="gradient-text">computer vision</span>{' '}
-            workspace
+            playground
           </h1>
 
           {/* Subtext */}
-          <p className={`mx-auto mt-6 max-w-2xl text-pretty text-lg leading-relaxed text-muted-foreground sm:text-xl ${mounted ? 'animate-slide-up-delay-2' : 'opacity-0'}`}>
+          <p className={`mx-auto mt-6 max-w-2xl text-pretty text-lg leading-relaxed text-muted-foreground sm:text-xl ${mounted ? 'animate-slide-up-delay-1' : 'opacity-0'}`}>
             Upload images, run state-of-the-art models, and explore computer vision tasks directly in your browser. No infrastructure required.
           </p>
 
           {/* CTAs */}
-          <div className={`mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row ${mounted ? 'animate-slide-up-delay-3' : 'opacity-0'}`}>
+          <div className={`mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row ${mounted ? 'animate-slide-up-delay-2' : 'opacity-0'}`}>
             <Link href="/register">
               <Button size="lg" className="h-12 px-8 text-base group">
                 Get started free

@@ -1,5 +1,6 @@
 import Link from 'next/link'
-import { Sparkles, Github, Twitter, Linkedin } from 'lucide-react'
+import Image from 'next/image'
+import { Github, Twitter, Linkedin } from 'lucide-react'
 
 export function FooterSection() {
   return (
@@ -11,16 +12,17 @@ export function FooterSection() {
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
           {/* Logo and tagline */}
           <div className="lg:col-span-2">
-            <Link href="/" className="inline-flex items-center gap-2.5 group">
-              <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-primary transition-transform duration-300 group-hover:scale-110">
-                <Sparkles className="h-5 w-5 text-primary-foreground" />
-              </div>
-              <span className="text-xl font-bold tracking-tight">
-                Vision<span className="text-primary">Verse</span>
-              </span>
+            <Link href="/" className="inline-flex group transition-transform duration-300 hover:scale-105">
+              <Image
+                src="/images/vv-logo.png"
+                alt="VisionVerse"
+                width={160}
+                height={40}
+                className="h-9 w-auto"
+              />
             </Link>
             <p className="mt-4 max-w-sm text-sm text-muted-foreground leading-relaxed">
-              Your all-in-one computer vision workspace. Upload images, run state-of-the-art models, and explore CV tasks directly in your browser.
+              Your all-in-one computer vision playground. Upload images, run state-of-the-art models, and explore CV tasks directly in your browser.
             </p>
             {/* Social links */}
             <div className="mt-6 flex items-center gap-4">
