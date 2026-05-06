@@ -13,7 +13,7 @@ export function HeroSection() {
   }, [])
 
   return (
-    <section className="relative overflow-hidden pt-32 pb-20 sm:pt-40 sm:pb-32">
+    <section className="relative overflow-hidden pt-28 pb-20 sm:pt-36 sm:pb-32">
       {/* Animated background effects */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
         {/* Gradient orbs */}
