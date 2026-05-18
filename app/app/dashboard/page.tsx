@@ -266,32 +266,29 @@ function StatsCard({
   value,
   icon: Icon,
   isLoading,
-  gradient,
   iconColor,
 }: {
   title: string
   value?: string | number
   icon: React.ComponentType<{ className?: string }>
   isLoading: boolean
-  gradient: string
   iconColor: string
 }) {
   return (
-    <Card className={`border-2 overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1`}>
-      <div className={`absolute inset-0 bg-gradient-to-br ${gradient} opacity-50`} />
-      <CardHeader className="relative flex flex-row items-center justify-between pb-2">
+    <Card className="relative border-2 overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1 bg-card">
+      <CardHeader className="flex flex-row items-center justify-between pb-2">
         <CardTitle className="text-sm font-medium text-muted-foreground">
           {title}
         </CardTitle>
-        <div className={`flex h-8 w-8 items-center justify-center rounded-lg bg-background/80`}>
-          <Icon className={`h-4 w-4 ${iconColor}`} />
+        <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-primary/10">
+          <Icon className={`h-5 w-5 ${iconColor}`} />
         </div>
       </CardHeader>
-      <CardContent className="relative">
+      <CardContent>
         {isLoading ? (
           <Skeleton className="h-8 w-24" />
         ) : (
-          <p className="text-2xl font-bold">{value}</p>
+          <p className="text-2xl font-bold text-foreground">{value}</p>
         )}
       </CardContent>
     </Card>
